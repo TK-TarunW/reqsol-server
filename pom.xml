@@ -8,6 +8,11 @@
     <artifactId>sol.req.ml</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <JAVA_HOME>C:\Program Files\Java\jdk1.8.0_101</JAVA_HOME>
+        <oryx.version>2.2.1</oryx.version>
+        <hadoop.version>2.7.3</hadoop.version>
+    </properties>
     <repositories>
         <repository>
             <id>cloudera-releases</id>
@@ -23,45 +28,111 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/com.cloudera.oryx/oryx-lambda -->
+        <dependency>
+            <groupId>jdk.tools</groupId>
+            <artifactId>jdk.tools</artifactId>
+            <scope>system</scope>
+            <version>1.8.0_101</version>
+            <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+        </dependency>
+
         <dependency>
             <groupId>com.cloudera.oryx</groupId>
             <artifactId>oryx-lambda</artifactId>
-            <version>2.0.0</version>
+            <version>${oryx.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.cloudera.oryx/oryx-api -->
         <dependency>
             <groupId>com.cloudera.oryx</groupId>
             <artifactId>oryx-api</artifactId>
-            <version>2.2.1</version>
+            <version>${oryx.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.cloudera.oryx/oryx-common -->
         <dependency>
             <groupId>com.cloudera.oryx</groupId>
             <artifactId>oryx-common</artifactId>
-            <version>2.2.1</version>
+            <version>${oryx.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.cloudera.oryx/oryx-lambda-serving -->
         <dependency>
             <groupId>com.cloudera.oryx</groupId>
             <artifactId>oryx-lambda-serving</artifactId>
-            <version>2.1.1</version>
+            <version>${oryx.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.cloudera.oryx</groupId>
             <artifactId>oryx-ml</artifactId>
-            <version>2.1.1</version>
+            <version>${oryx.version}</version>
         </dependency>
 
+        <!-- Hadoop -->
 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-app</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-yarn-client</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-yarn-api</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-annotations</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>${hadoop.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+            <version>2.6.0-mr1-cdh5.9.0</version>
+        </dependency>
     </dependencies>
 
 
