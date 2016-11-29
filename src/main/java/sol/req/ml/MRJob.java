@@ -15,12 +15,9 @@ import org.apache.hadoop.util.ToolRunner;
 /**
  * Created by tarun.walia on 11/28/2016.
  */
-public class HadoopApp extends Configured implements Tool {
+public class MRJob extends Configured implements Tool {
 
-    public static void main(String[] args) throws Exception {
-        int exitCode = ToolRunner.run(new HadoopApp(), args);
-        System.exit(exitCode);
-    }
+
 
     public int run(String[] args) throws Exception {
         if (args.length != 2) {
@@ -31,8 +28,8 @@ public class HadoopApp extends Configured implements Tool {
         }
 
         Job job = Job.getInstance();
-        job.setJarByClass(HadoopApp.class);
-        job.setJobName("WordCounter");
+        job.setJarByClass(MRJob.class);
+        job.setJobName("MRJob");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));

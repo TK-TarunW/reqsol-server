@@ -158,8 +158,7 @@
                     </excludes>
                     <archive>
                         <manifest>
-                            <!-- Jar file entry point -->
-                            <mainClass>sol.req.ml.HadoopApp</mainClass>
+                            <mainClass>sol.req.ml.MRJobMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
