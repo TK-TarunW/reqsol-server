@@ -13,6 +13,7 @@
         <oryx.version>2.2.1</oryx.version>
         <hadoop.version>2.7.3</hadoop.version>
         <spark.version>2.0.2</spark.version>
+        <avro.version>1.7.4</avro.version>
     </properties>
     <repositories>
         <repository>
@@ -162,6 +163,29 @@
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro.version}</version>
+                <executions>
+                    <execution>
+                        <id>schemas</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>StringPair.avsc</include>
+                            </includes>
+                            <stringType>String</stringType>
+                            <sourceDirectory>src/main/resources</sourceDirectory>
+                            <outputDirectory>${project.build.directory}/generated-sources/java
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
